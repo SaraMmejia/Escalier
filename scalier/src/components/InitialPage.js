@@ -4,12 +4,15 @@ import SincuadrosN from '../assets/SincuadrosN.png';
 import InitialForms from './InitialForms';
 import { Link } from 'react-router-dom';
 
-function InitialPage(status, setNombre) {
+function InitialPage() {
   const [select, setSelect] = useState(false);
   const [name, setName] = useState('');
   const [userName, setUserName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+  const [access, setAccess] = useState(null);
 
   return (
     <div className="initial-Page">
@@ -22,16 +25,16 @@ function InitialPage(status, setNombre) {
           ></img>
         </div>
       </div>
-      <div class="side-Form">
-        <InitialForms
-          status={select}
-          select={setSelect}
-          setName={setName}
-          setUserName={setUserName}
-          setEmail={setEmail}
-          setPassword={setPassword}
-        />
-      </div>
+
+      <InitialForms
+        status={select}
+        select={setSelect}
+        access={setSelect}
+        setName={setName}
+        setUserName={setUserName}
+        setEmail={setEmail}
+        setPassword={setPassword}
+      />
     </div>
   );
 }

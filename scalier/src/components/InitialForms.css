@@ -1,0 +1,86 @@
+.sideRight {
+  height: 630px;
+  margin: 15px;
+}
+
+.access-Buttons {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  justify-content: space-around;
+}
+
+.buttonE {
+  width: 90px;
+  border: none;
+  text-decoration: none;
+  padding: 0;
+  font-size: 20px;
+  font-weight: bold;
+  background: none;
+  cursor: pointer;
+  outline: none;
+}
+
+.buttonE:focus {
+  border-bottom: 2px solid rgb(200, 139, 74);
+}
+
+.buttonR {
+  border: none;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: bold;
+  background: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.buttonR:focus {
+  border-bottom: 2px solid rgb(200, 139, 74);
+}
+
+.access-Forms {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.formE {
+  width: 391px;
+  height: 40px;
+  border-radius: 8px;
+  background-color: #f3f3f4;
+  border: none;
+  font-size: 18px;
+  padding: 10px;
+}
+
+.formR {
+  width: 391px;
+  height: 40px;
+  border-radius: 8px;
+  background-color: #f3f3f4;
+  transition: all 0.4s ease 0s;
+  border: none;
+  font-size: 18px;
+  padding: 10px;
+}
+
+.addButton {
+  width: 391px;
+  height: 60px;
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: rgb(200, 139, 74, 100);
+}
+
+.olvidaste {
+  margin-top: 0px;
+}
