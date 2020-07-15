@@ -1,0 +1,50 @@
+.home-page {
+  display: flex;
+  flex-direction: column;
+}
+
+.home-Bar {
+  display: flex;
+  justify-content: space-between;
+}
+
+.home-List {
+  width: 950px;
+  display: flex;
+  justify-content: start;
+  justify-content: space-evenly;
+
+  text-decoration: none;
+}
+
+.list {
+  height: 15px;
+  font-size: 15px;
+  color: #5e676e;
+  cursor: pointer;
+}
+
+.list:hover {
+  color: black;
+}
+
+.filter-Icon {
+  color: #5e676e;
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+.home-filter {
+  height: 40px;
+  width: 90px;
+  border-radius: 8px;
+  font-size: 18px;
+  color: black;
+  border: none;
+  margin-right: 200px;
+  cursor: pointer;
+}
+
+.home-filter:hover {
+  background-color: #5e676e83;
+}

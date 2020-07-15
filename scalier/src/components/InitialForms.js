@@ -11,7 +11,12 @@ const InitialForms = ({
   setPassword,
   loading,
   error,
-  access,
+  email,
+  name,
+  password,
+  userName,
+  handleCreate,
+  handleLogin,
 }) => {
   const nameRef = React.useRef(null);
   const userNameRef = React.useRef(null);
@@ -19,12 +24,12 @@ const InitialForms = ({
   const passwordRef = React.useRef(true);
   const errorRef = React.useRef(true);
 
-  const agregarDatos = () => {
-    setName(nameRef.current.value);
-    setUserName(userNameRef.current.value);
-    setEmail(emailRef.current.value);
-    setPassword(passwordRef.current.vulue);
-  };
+  // const agregarDatos = () => {
+  //   setName(nameRef.current.value);
+  //   setUserName(userNameRef.current.value);
+  //   setEmail(emailRef.current.value);
+  //   setPassword(passwordRef.current.vulue);
+  // };
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Something went wrong</p>;
@@ -46,26 +51,28 @@ const InitialForms = ({
           Regístrate
         </button>
       </div>
-      {/* Registrarse */}
+      {/* Entrar */}
       <div className="access-Forms">
         <input
           ref={emailRef}
           name="email"
           type="email"
+          onChange={(e) => setEmail(e.target.value)}
           className="formE"
-          placeholder="UserName - Dirección de Email"
+          placeholder="Dirección De Email"
         />
         <br />
         <input
           ref={passwordRef}
           name="password"
           type="password"
+          onChange={(e) => setPassword(e.target.value)}
           className="formE"
           placeholder="Contraseña"
         />
         <br />
 
-        {/* Entrar */}
+        {/* Registrarse */}
         {status && (
           <>
             <input
@@ -74,6 +81,7 @@ const InitialForms = ({
               type="text"
               className="formR"
               placeholder="Nombre"
+              onChange={(e) => setName(e.target.value)}
             />
             <br />
             <input
@@ -82,14 +90,21 @@ const InitialForms = ({
               type="text"
               className="formR"
               placeholder="UserName"
-              registry={true}
+              onChange={(e) => setUserName(e.target.value)}
             />
-
             <br />
           </>
         )}
         <p className="olvidaste">¿Olvidaste tu contraseña?</p>
-        <button className="addButton">{access ? 'Crear' : 'Regístrate'}</button>
+        {status ? (
+          <button className="addButton" onClick={(e) => handleCreate(e)}>
+            Regístrate
+          </button>
+        ) : (
+          <button className="addButton" onClick={(e) => handleLogin(e)}>
+            Entrar
+          </button>
+        )}
       </div>
     </div>
   );

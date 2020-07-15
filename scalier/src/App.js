@@ -1,7 +1,8 @@
 import React from 'react';
 import './App.css';
 import InitialPage from './components/InitialPage';
-import InitialForms from './components/InitialForms';
+import Home from './components/Home';
+import Registry from './pages/registry';
 import {
   BrowserRouter as Router,
   Route,
@@ -15,6 +16,8 @@ function App() {
       <Router>
         <Switch>
           <Route exact path="/" component={InitialPage}></Route>
+          <Route exact path="/home" component={Home}></Route>
+          <Route exact path="/users/create" component={Home}></Route>
         </Switch>
       </Router>
     </div>

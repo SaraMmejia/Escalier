@@ -1,0 +1,93 @@
+/* .navBar-Page {
+  position: fixed;
+} */
+
+.navBar-Bar {
+  display: flex;
+  height: 75px;
+}
+
+.navBar-Image-Logo {
+  width: 300px;
+  margin-top: 10px;
+}
+
+.navBar-List {
+  width: 400px;
+  padding: 0px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.list-Explore {
+  font-size: 18px;
+  margin-top: 10px;
+  color: #5e676e;
+  cursor: pointer;
+}
+
+.list-Explore:hover {
+  color: black;
+}
+
+.list-ForArchitects {
+  font-size: 18px;
+  margin-top: 10px;
+
+  color: #5e676e;
+  cursor: pointer;
+}
+
+.list-ForArchitects:hover {
+  color: black;
+}
+
+.NavBar-Icon {
+  color: #5e676e;
+  margin-right: 5px;
+  margin-top: 3px;
+  cursor: pointer;
+}
+
+.input-Search {
+  height: 40px;
+  border-radius: 8px;
+  margin-top: 3px;
+  padding: 10px;
+  background-color: #f3f3f4;
+  border: none;
+  outline-color: #c88b4a;
+  cursor: pointer;
+}
+
+.input-Search:hover {
+  outline-color: #c88b4a;
+}
+
+.navBar-interact {
+  width: 600px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.interact-Upload {
+  margin-left: 200px;
+}
+
+.button-Upload {
+  height: 40px;
+  width: 90px;
+  margin-top: 3px;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: rgb(200, 139, 74, 100);
+}
+
+.button-Upload:hover {
+  background-color: #c88b4a98;
+}
