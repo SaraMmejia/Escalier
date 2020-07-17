@@ -20,7 +20,7 @@ function InitialPage(props) {
 
     axios({
       method: 'POST',
-      baseURL: 'http://localhost:8080',
+      baseURL: 'http://localhost:8081',
       url: '/signin',
       headers: {
         'Content-Type': 'application/json',
@@ -31,7 +31,9 @@ function InitialPage(props) {
       },
     })
       .then((data) => {
-        //const token = response.data.token;
+        console.log('data', data.data.token);
+        localStorage.setItem('token', data.data.token);
+
         props.history.push('/home');
       })
       .catch((error) => {
@@ -44,7 +46,7 @@ function InitialPage(props) {
 
     axios({
       method: 'POST',
-      baseURL: 'http://localhost:8080',
+      baseURL: 'http://localhost:8081',
       url: '/users/create',
       headers: {
         'Content-Type': 'application/json',
@@ -57,7 +59,8 @@ function InitialPage(props) {
       },
     })
       .then((data) => {
-        //const token = response.data.token;
+        console.log('data', data.data.token);
+        localStorage.setItem('token', data.data.token);
         props.history.push('/home');
       })
       .catch((error) => {

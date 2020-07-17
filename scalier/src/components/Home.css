@@ -43,6 +43,7 @@
   border: none;
   margin-right: 200px;
   cursor: pointer;
+  outline: none;
 }
 
 .home-filter:hover {

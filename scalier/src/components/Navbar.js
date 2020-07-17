@@ -3,9 +3,10 @@ import './Navbar.css';
 import SincuadrosN from '../assets/SincuadrosN.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 
-function Navbar() {
+function Navbar({ userName }) {
   return (
     <div className="navBar-Page">
       <div className="navBar-Bar">
@@ -32,10 +33,23 @@ function Navbar() {
               ></input>{' '}
             </il>
           </form>
+          <p>{userName}</p>
 
-          <il className="interact-Upload">
-            {' '}
-            <button className="button-Upload">Subir</button>{' '}
+          <il className="interact-Collection">
+            <Link
+              to="/posts/create"
+              className="button-Upload"
+              data-testid="NewProductLink"
+            >
+              Subir
+            </Link>
+            <Link
+              to="/posts/list"
+              className="button-Collection"
+              data-testid="NewProductLink"
+            >
+              Colección
+            </Link>
           </il>
         </ul>
       </div>

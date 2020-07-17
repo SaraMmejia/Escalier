@@ -11,10 +11,6 @@ const InitialForms = ({
   setPassword,
   loading,
   error,
-  email,
-  name,
-  password,
-  userName,
   handleCreate,
   handleLogin,
 }) => {
