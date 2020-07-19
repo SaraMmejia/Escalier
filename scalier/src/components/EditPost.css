@@ -1,14 +1,14 @@
-.page-Posts {
+.page-PostseE {
   display: flex;
   flex-direction: column;
 }
 
-.page-Forms {
+.page-FormsE {
   display: flex;
   justify-content: center;
 }
 
-.principal-Image {
+.principal-ImageE {
   margin-top: 20px;
   display: flex;
   justify-content: center;
@@ -21,45 +21,45 @@
   cursor: pointer;
 }
 
-.principal-Image:hover {
+.principal-ImageE:hover {
   border-color: #c88b4a;
 }
 
-.upload-Icon {
+.upload-IconE {
   font-size: 10em;
   color: #d7d7eb;
 }
 
-.upload-Icon:hover {
+.upload-IconE:hover {
   color: #c88b4a;
 }
 
-.file-img {
+.file-imgE {
   cursor: pointer;
   display: flex;
 }
 
-.button-Select {
+.button-SelectE {
   display: flex;
   justify-content: end;
 }
 
-#file-upload-button {
+#file-upload-buttonE {
   cursor: pointer;
 }
 
-.principal-Title {
+.principal-TitleE {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
 }
 
-.title-Input {
+.title-InputE {
   font-weight: bold;
 }
 
-.add-Title {
+.add-TitleE {
   width: 380px;
   height: 40px;
   margin-top: 10px;
@@ -71,14 +71,14 @@
   cursor: pointer;
 }
 
-.principal-Tags {
+.principal-TagsE {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
 }
 
-.add-Tags {
+.add-TagsE {
   width: 380px;
   height: 40px;
   margin-top: 10px;
@@ -90,22 +90,22 @@
   cursor: pointer;
 }
 
-.tags-Input {
+.tags-InputE {
   font-weight: bold;
 }
 
-.principal-Description {
+.principal-DescriptionE {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
 }
 
-.description-Input {
+.description-InputE {
   font-weight: bold;
 }
 
-.description-text {
+.description-textE {
   width: 380px;
   margin-top: 10px;
   padding-left: 10px;
@@ -114,12 +114,12 @@
   background-color: #f3f3f4;
 }
 
-.button-Create {
+.button-CreateE {
   display: flex;
   justify-content: center;
 }
 
-.publish-Post {
+.publish-PostE {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -137,11 +137,11 @@
   background-color: #c88b4a;
 }
 
-.publish-Post:hover {
+.publish-PostE:hover {
   background-color: #c88b4a98;
 }
 
-.upload-image {
+.upload-imageE {
   width: 796px;
   height: 607px;
   border-radius: 8px;

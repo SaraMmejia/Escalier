@@ -1,11 +1,11 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
+import './EditPost.css';
 import axios from 'axios';
+import Navbar from './Navbar';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCloudUploadAlt } from '@fortawesome/free-solid-svg-icons';
-import Navbar from './Navbar';
-import './FormPost.css';
 
-function FormPost(props) {
+function EditPost(props) {
   const [image, setImage] = useState(null);
   const [title, setTitle] = useState('');
   const [tags, setTags] = useState('');
@@ -13,26 +13,45 @@ function FormPost(props) {
   const [file, setFile] = useState(null);
 
   async function handleSubmit(e) {
+    console.log('Title', title, 'description:', description);
     e.preventDefault();
     const data = new FormData();
-    data.append('title', title);
+    data.set('title', title);
     data.append('file', file);
     data.append('tags', tags);
-    data.append('description', description);
+    data.set('description', description);
+    console.log('Data es:', data);
 
     await axios({
-      method: 'POST',
+      method: 'PUT',
       baseURL: process.env.REACT_APP_SERVER_URL,
-      url: '/posts/create',
+      url: `/posts/edit/${props.match.params.id}`,
       headers: {
         'Content-Type': 'multipart/form-data',
         Authorization: localStorage.getItem('token'),
       },
       data,
     }).then(({ data }) => {
-      props.history.push('/home');
+      props.history.push('/posts/listPost');
     });
   }
+  useEffect(() => {
+    axios({
+      method: 'GET',
+      baseURL: process.env.REACT_APP_SERVER_URL,
+      url: `posts/show/${props.match.params.id}`,
+      headers: {
+        'Content-Type': 'multipart/form-data',
+        Authorization: localStorage.getItem('token'),
+      },
+    }).then((data) => {
+      const { image, title, tags, description } = data.data;
+      setDescription(description);
+      setTags(tags);
+      setImage(image);
+      setTitle(title);
+    });
+  }, []);
 
   function readFile(file) {
     const reader = new FileReader(); //FileReader es una F de JavaScript
@@ -47,28 +66,28 @@ function FormPost(props) {
   }
 
   return (
-    <div className="page-Posts">
+    <div className="page-PostsE">
       <Navbar />
-      <div className="page-Forms">
-        <form className="post-Form" onSubmit={handleSubmit}>
-          <div className="principal-Image">
+      <div className="page-FormsE">
+        <form className="post-FormE" onSubmit={handleSubmit}>
+          <div className="principal-ImageE">
             {image ? null : (
               <FontAwesomeIcon
                 icon={faCloudUploadAlt}
-                className="upload-Icon"
+                className="upload-IconE"
               />
             )}
             {image && (
-              <img src={image} alt="upload preview" className="upload-image" />
+              <img src={image} alt="upload preview" className="upload-imageE" />
             )}
           </div>
-          <div className="button-Select">
+          <div className="button-SelectE">
             <input
               type="file"
               accept="image/*"
               name="file"
               id="file"
-              className="file-img"
+              className="file-imgE"
               onChange={handleImage}
             />
           </div>
@@ -76,13 +95,13 @@ function FormPost(props) {
           <br />
           <br />
           <br />
-          <div className="principal-Title">
-            <label htmlFor="title" className="title-Input">
+          <div className="principal-TitleE">
+            <label htmlFor="title" className="title-InputE">
               {' '}
               Título{' '}
             </label>
             <input
-              className="add-Title"
+              className="add-TitleE"
               type="text"
               name="title"
               id="title"
@@ -94,14 +113,14 @@ function FormPost(props) {
           <br />
           <br />
           <br />
-          <div className="principal-Tags">
-            <label htmlFor="tags" className="tags-Input">
+          <div className="principal-TagsE">
+            <label htmlFor="tags" className="tags-InputE">
               {' '}
               Tags{' '}
             </label>
 
             <input
-              className="add-Tags"
+              className="add-TagsE"
               type="text"
               name="tags"
               id="tags"
@@ -113,14 +132,14 @@ function FormPost(props) {
           <br />
           <br />
           <br />
-          <div className="principal-Description">
-            <label htmlFor="Description" className="description-Input">
+          <div className="principal-DescriptionE">
+            <label htmlFor="Description" className="description-InputE">
               {' '}
               Descripción
             </label>
 
             <textarea
-              className="description-text"
+              className="description-textE"
               name="description"
               id="description"
               cols="35"
@@ -134,10 +153,10 @@ function FormPost(props) {
           <br />
           <br />
           <br />
-          <div className="button-Create">
-            <button className="publish-Post" type="submit">
+          <div className="button-CreateE">
+            <button className="publish-PostE" type="submit">
               {' '}
-              Publicar Imagén{' '}
+              Editar Imagén{' '}
             </button>
           </div>
         </form>
@@ -146,4 +165,4 @@ function FormPost(props) {
   );
 }
 
-export default FormPost;
+export default EditPost;

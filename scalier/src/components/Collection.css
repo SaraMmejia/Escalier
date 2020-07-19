@@ -1,0 +1,95 @@
+.collection {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin: 30px;
+}
+
+.text-collection {
+  font-size: 32px;
+}
+
+.text {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  margin-bottom: 50px;
+}
+
+.constainer {
+  display: grid;
+  grid-template-columns: 296px 296px 296px 296px;
+  grid-template-rows: 254px 254px 254px 254px;
+  grid-gap: 36px;
+}
+
+.collection-Icons {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+
+.icones-Collection {
+  display: flex;
+  justify-content: space-evenly;
+  width: 150px;
+}
+
+.commentC {
+  color: #9e9ea7;
+  cursor: pointer;
+  display: flex;
+}
+
+.comment-commentsC {
+  margin: 0px;
+}
+
+.comment-IconC {
+  font-size: 16px;
+}
+
+.comment-IconC:hover {
+  color: #ea4c89;
+}
+
+.likeC {
+  display: flex;
+  color: #9e9ea7;
+  cursor: pointer;
+}
+
+.like-IconC:hover {
+  color: #ea4c89;
+}
+
+.like-likesC {
+  margin: 0px;
+}
+
+.edit-Icon {
+  font-size: 20px;
+}
+
+.edit-Icon:hover {
+  color: #c88b4a;
+}
+
+.editC {
+  color: #9e9ea7;
+  cursor: pointer;
+}
+
+.deleteC {
+  color: #9e9ea7;
+  cursor: pointer;
+}
+
+.delete-IconC {
+  font-size: 20px;
+}
+
+.delete-IconC:hover {
+  color: #c88b4a;
+}

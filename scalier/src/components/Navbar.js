@@ -11,18 +11,20 @@ function Navbar({ userName }) {
     <div className="navBar-Page">
       <div className="navBar-Bar">
         {' '}
-        <img
-          src={SincuadrosN}
-          className="navBar-Image-Logo"
-          alt="navBar-Logo"
-        ></img>
+        <Link to="/home" className="return-Home">
+          <img
+            src={SincuadrosN}
+            className="navBar-Image-Logo"
+            alt="navBar-Logo"
+          ></img>
+        </Link>
         <ul className="navBar-List">
-          <il className="list-Explore"> Explorar </il>
-          <il className="list-ForArchitects"> Para Arquitectos </il>
+          <li className="list-Explore"> Explorar </li>
+          <li className="list-ForArchitects"> Para Arquitectos </li>
         </ul>
         <ul className="navBar-interact">
           <form>
-            <il className="interact-Search">
+            <li className="interact-Search">
               {' '}
               <FontAwesomeIcon icon={faSearch} className="NavBar-Icon" />
               <input
@@ -31,11 +33,11 @@ function Navbar({ userName }) {
                 type="search"
                 className="input-Search"
               ></input>{' '}
-            </il>
+            </li>
           </form>
           <p>{userName}</p>
 
-          <il className="interact-Collection">
+          <li className="interact-Collection">
             <Link
               to="/posts/create"
               className="button-Upload"
@@ -44,13 +46,13 @@ function Navbar({ userName }) {
               Subir
             </Link>
             <Link
-              to="/posts/list"
+              to="/posts/listPost"
               className="button-Collection"
               data-testid="NewProductLink"
             >
               Colección
             </Link>
-          </il>
+          </li>
         </ul>
       </div>
       <div className="line">

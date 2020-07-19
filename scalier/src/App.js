@@ -3,6 +3,8 @@ import './App.css';
 import InitialPage from './components/InitialPage';
 import Home from './components/Home';
 import FormPost from './components/FormPost';
+import Collection from './components/Collection';
+import EditPost from './components/EditPost';
 import {
   BrowserRouter as Router,
   Route,
@@ -30,6 +32,8 @@ function App() {
             component={Home}
           ></PrivateRoute>
           <Route exact path="/posts/create" component={FormPost}></Route>
+          <Route exact path="/posts/listPost" component={Collection}></Route>
+          <Route exact path="/posts/edit/:id" component={EditPost}></Route>
         </Switch>
       </Router>
     </div>

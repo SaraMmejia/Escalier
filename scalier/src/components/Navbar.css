@@ -24,6 +24,7 @@
   margin-top: 10px;
   color: #5e676e;
   cursor: pointer;
+  list-style: none;
 }
 
 .list-Explore:hover {
@@ -36,10 +37,15 @@
 
   color: #5e676e;
   cursor: pointer;
+  list-style: none;
 }
 
 .list-ForArchitects:hover {
   color: black;
+}
+
+.interact-Search {
+  list-style: none;
 }
 
 .NavBar-Icon {
