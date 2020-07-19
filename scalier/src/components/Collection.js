@@ -68,7 +68,10 @@ function Collection({ history }) {
                       <FontAwesomeIcon icon={faEdit} className="edit-Icon" />
                     </div>
                   </Link>
-                  <Link to="/posts/destroy" className="button-Delete">
+                  <Link
+                    to={`/posts/destroy/${data._id}`}
+                    className="button-Delete"
+                  >
                     <div className="deleteC">
                       <FontAwesomeIcon
                         icon={faTrashAlt}

@@ -11,6 +11,7 @@ import {
   Switch,
   Redirect,
 } from 'react-router-dom';
+import DeletePost from './components/DeletePost';
 
 function PrivateRoute(props) {
   const authorization = localStorage.getItem('token');
@@ -34,6 +35,7 @@ function App() {
           <Route exact path="/posts/create" component={FormPost}></Route>
           <Route exact path="/posts/listPost" component={Collection}></Route>
           <Route exact path="/posts/edit/:id" component={EditPost}></Route>
+          <Route exact path="/posts/destroy/:id" component={DeletePost}></Route>
         </Switch>
       </Router>
     </div>

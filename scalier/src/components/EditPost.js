@@ -20,7 +20,6 @@ function EditPost(props) {
     data.append('file', file);
     data.append('tags', tags);
     data.set('description', description);
-    console.log('Data es:', data);
 
     await axios({
       method: 'PUT',

@@ -1,0 +1,148 @@
+.page-PostD {
+  display: flex;
+  flex-direction: column;
+}
+
+.page-FormsD {
+  display: flex;
+  justify-content: center;
+}
+
+.principal-ImageD {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 796px;
+  height: 607px;
+  border-style: dashed;
+  border-color: #d7d7eb;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.principal-ImageD:hover {
+  border-color: #c88b4a;
+}
+
+.upload-IconD {
+  font-size: 10em;
+  color: #d7d7eb;
+}
+
+.upload-IconD:hover {
+  color: #c88b4a;
+}
+
+.file-imgD {
+  cursor: pointer;
+  display: flex;
+}
+
+.button-SelectD {
+  display: flex;
+  justify-content: end;
+}
+
+#file-upload-buttonD {
+  cursor: pointer;
+}
+
+.principal-TitleD {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.title-InputD {
+  font-weight: bold;
+}
+
+.add-TitleD {
+  width: 380px;
+  height: 40px;
+  margin-top: 10px;
+  padding-left: 10px;
+  font-size: 16px;
+  border-radius: 8px;
+  background-color: #f3f3f4;
+  border: none;
+  cursor: pointer;
+}
+
+.principal-TagsD {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.add-TagsD {
+  width: 380px;
+  height: 40px;
+  margin-top: 10px;
+  padding-left: 10px;
+  font-size: 16px;
+  border-radius: 8px;
+  background-color: #f3f3f4;
+  border: none;
+  cursor: pointer;
+}
+
+.tags-InputD {
+  font-weight: bold;
+}
+
+.principal-DescriptionD {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.description-InputD {
+  font-weight: bold;
+}
+
+.description-textD {
+  width: 380px;
+  margin-top: 10px;
+  padding-left: 10px;
+  font-size: 16px;
+  border-radius: 8px;
+  background-color: #f3f3f4;
+}
+
+.button-CreateD {
+  display: flex;
+  justify-content: center;
+}
+
+.publish-PostD {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  width: 240px;
+  margin-bottom: 30px;
+  margin-right: 30px;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+  color: white;
+  cursor: pointer;
+  outline: none;
+  background-color: #c88b4a;
+}
+
+.publish-PostD:hover {
+  background-color: #c88b4a98;
+}
+
+.upload-imageD {
+  width: 796px;
+  height: 607px;
+  border-radius: 8px;
+}
