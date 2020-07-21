@@ -6,7 +6,10 @@ import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 
-function Navbar({ userName }) {
+function Navbar(props) {
+  function handleClick() {
+    localStorage.clear();
+  }
   return (
     <div className="navBar-Page">
       <div className="navBar-Bar">
@@ -35,7 +38,11 @@ function Navbar({ userName }) {
               ></input>{' '}
             </li>
           </form>
-          <p>{userName}</p>
+          <div className="btn-logout">
+            <Link to="/" className="button-logout" onClick={handleClick}>
+              Sign out
+            </Link>
+          </div>
 
           <li className="interact-Collection">
             <Link

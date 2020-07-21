@@ -57,7 +57,6 @@ function InitialPage(props) {
       },
     })
       .then((data) => {
-        console.log('data', data.data.token);
         localStorage.setItem('token', data.data.token);
         props.history.push('/home');
       })

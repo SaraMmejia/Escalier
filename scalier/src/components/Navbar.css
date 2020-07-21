@@ -132,3 +132,30 @@
 .button-Collection:hover {
   background-color: #c88b4a98;
 }
+
+.button-logout {
+  text-decoration: none;
+  color: white;
+}
+
+.btn-logout {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  height: 25px;
+  width: 70px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: bold;
+
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  outline: none;
+  background-color: #6a8299;
+}
+
+.btn-logout:hover {
+  background-color: #8b9ee879;
+}

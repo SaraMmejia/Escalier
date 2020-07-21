@@ -5,6 +5,10 @@
   margin: 30px;
 }
 
+.cards:hover {
+  opacity: 0.3;
+}
+
 .list-Post {
   width: 296px;
   height: 254px;

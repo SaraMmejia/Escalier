@@ -4,8 +4,9 @@ import axios from 'axios';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart } from '@fortawesome/free-solid-svg-icons';
 import { faComment } from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'react-router-dom';
 
-function ListPost({ history }) {
+function ListPost({ props }) {
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
@@ -20,7 +21,7 @@ function ListPost({ history }) {
     }).then((response) => {
       setPosts(response.data);
     });
-  }, [history]);
+  }, []);
 
   return (
     <div className="list-Home">
@@ -31,11 +32,14 @@ function ListPost({ history }) {
           return (
             <div className="list-Post">
               <div className="cards">
-                <img
-                  src={data.image}
-                  className="post-Image"
-                  alt="Imagen Publicada"
-                />
+                <Link to={`/posts/show/${data._id}`}>
+                  {' '}
+                  <img
+                    src={data.image}
+                    className="post-Image"
+                    alt="Imagen Publicada"
+                  />
+                </Link>
               </div>
               <div className="post-Icons">
                 <div className="title-Card">

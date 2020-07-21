@@ -5,13 +5,14 @@ import Home from './components/Home';
 import FormPost from './components/FormPost';
 import Collection from './components/Collection';
 import EditPost from './components/EditPost';
+import DeletePost from './components/DeletePost';
+import CommentPost from './components/CommentPost';
 import {
   BrowserRouter as Router,
   Route,
   Switch,
   Redirect,
 } from 'react-router-dom';
-import DeletePost from './components/DeletePost';
 
 function PrivateRoute(props) {
   const authorization = localStorage.getItem('token');
@@ -36,6 +37,7 @@ function App() {
           <Route exact path="/posts/listPost" component={Collection}></Route>
           <Route exact path="/posts/edit/:id" component={EditPost}></Route>
           <Route exact path="/posts/destroy/:id" component={DeletePost}></Route>
+          <Route exact path="/posts/show/:id" component={CommentPost}></Route>
         </Switch>
       </Router>
     </div>
