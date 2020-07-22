@@ -45,7 +45,7 @@
 }
 
 .icones-Post {
-  width: 90px;
+  width: 70px;
   margin-right: 20px;
   display: flex;
   justify-content: space-between;
@@ -53,6 +53,7 @@
 
 .comment {
   display: flex;
+  cursor: pointer;
 }
 
 .comment-Icon {
@@ -70,6 +71,7 @@
 
 .like {
   display: flex;
+  cursor: pointer;
 }
 
 .like-likes {
@@ -80,6 +82,14 @@
 .like-Icon {
   color: #9e9ea7;
   cursor: pointer;
+}
+
+.like-Icon--active {
+  color: #ea4c89;
+}
+
+.like-Icon--inactive {
+  color: #9e9ea7;
 }
 
 .like-Icon:hover {

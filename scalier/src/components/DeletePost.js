@@ -51,7 +51,7 @@ function DeletePost(props) {
       setImage(image);
       setTitle(title);
     });
-  }, []);
+  });
 
   function readFile(file) {
     const reader = new FileReader(); //FileReader es una F de JavaScript

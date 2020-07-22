@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React from 'react';
 import './InitialForms.css';
 import SincuadrosN from '../assets/SincuadrosN.png';
 
@@ -18,7 +18,6 @@ const InitialForms = ({
   const userNameRef = React.useRef(null);
   const emailRef = React.useRef(null);
   const passwordRef = React.useRef(true);
-  const errorRef = React.useRef(true);
 
   // const agregarDatos = () => {
   //   setName(nameRef.current.value);

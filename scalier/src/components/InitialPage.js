@@ -1,8 +1,7 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState } from 'react';
 import './InitialPage.css';
 import SincuadrosN from '../assets/SincuadrosN.png';
 import InitialForms from './InitialForms';
-import { Link } from 'react-router-dom';
 
 import axios from 'axios';
 
@@ -12,8 +11,6 @@ function InitialPage(props) {
   const [userName, setUserName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
 
   const handleLogin = (e) => {
     e.preventDefault();

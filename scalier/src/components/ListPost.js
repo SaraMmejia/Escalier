@@ -23,6 +23,40 @@ function ListPost({ props }) {
     });
   }, []);
 
+  async function vote(postId, vote) {
+    let url;
+    if (vote) {
+      url = '/likes/add';
+    } else {
+      url = 'likes/remove';
+    }
+
+    await axios({
+      method: 'POST',
+      baseURL: process.env.REACT_APP_SERVER_URL,
+      url,
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: localStorage.getItem('token'),
+      },
+      data: {
+        postId,
+      },
+    }).then((data) => {
+      let modifiedPosts = posts.map((item) => {
+        if (item._id === postId) {
+          let mod = { ...item };
+          mod.liked = vote ? true : false;
+          mod.likes = vote ? item.likes + 1 : item.likes - 1;
+          return mod;
+        } else {
+          return item;
+        }
+      });
+      setPosts(modifiedPosts);
+    });
+  }
+
   return (
     <div className="list-Home">
       <h2 className="title"> Conoce lo último en tendencia</h2>
@@ -30,7 +64,7 @@ function ListPost({ props }) {
       <div className="container-Post">
         {posts.map((data) => {
           return (
-            <div className="list-Post">
+            <div className="list-Post" key={data._id}>
               <div className="cards">
                 <Link to={`/posts/show/${data._id}`}>
                   {' '}
@@ -51,11 +85,17 @@ function ListPost({ props }) {
                       icon={faComment}
                       className="comment-Icon"
                     />
-                    <p className="comment-comments">12</p>
+                    <p className="comment-comments">{data.comments}</p>
                   </div>
                   <div className="like">
-                    <FontAwesomeIcon icon={faHeart} className="like-Icon" />
-                    <p className="like-likes">156</p>
+                    <FontAwesomeIcon
+                      icon={faHeart}
+                      className={
+                        data.liked ? 'like-Icon--active' : 'like-Icon--inactive'
+                      }
+                      onClick={() => vote(data._id, data.liked ? false : true)}
+                    />
+                    <p className="like-likes">{data.likes}</p>
                   </div>
                 </div>
               </div>

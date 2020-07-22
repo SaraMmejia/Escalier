@@ -15,6 +15,10 @@ function CommentPost(props) {
 
   async function handleSubmit(e) {
     e.preventDefault();
+    const data = new FormData();
+    data.append('write', write);
+    data.append('title', title);
+    data.append('description', description);
 
     await axios({
       method: 'POST',
@@ -25,11 +29,28 @@ function CommentPost(props) {
         Authorization: localStorage.getItem('token'),
       },
       data: {
-        write,
+        text: write,
+        postId: props.match.params.id,
       },
     }).then(({ data }) => {
-      console.log('data', data);
-      props.history.push(`/posts/show/${props.match.params.id}`);
+      getComments();
+    });
+  }
+
+  async function getComments() {
+    await axios({
+      method: 'POST',
+      baseURL: process.env.REACT_APP_SERVER_URL,
+      url: '/comments/list',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: localStorage.getItem('token'),
+      },
+      data: {
+        postId: props.match.params.id,
+      },
+    }).then((data) => {
+      setComments(data.data);
     });
   }
 
@@ -47,6 +68,7 @@ function CommentPost(props) {
       setDescription(description);
       setImage(image);
       setTitle(title);
+      getComments();
     });
   }, []);
 
@@ -56,7 +78,7 @@ function CommentPost(props) {
       <div className="comment-All">
         <div className="comment-icones">
           <div className="content-title">
-            <h2 classsName="comment-title">{title}</h2>
+            <h2 className="comment-title">{title}</h2>
           </div>
           <div className="icones-Comment">
             <div className="save-Icon">
@@ -78,11 +100,13 @@ function CommentPost(props) {
           <hr className="line"></hr>
         </div>
         <div className="all-pace-Comment">
-          <div classsName="commet-Users">
-            <div classsName="commet-Users">
-              {comments.map((data) => {
-                return <p>{write}</p>;
-              })}
+          <div className="commet-Users">
+            <div className="commet-Users">
+              {comments.map((data) => (
+                <p key={data._id}>
+                  {data.ownerName}:{data.text}
+                </p>
+              ))}
             </div>
           </div>
           <form className="place-Comment" onSubmit={handleSubmit}>
@@ -93,7 +117,6 @@ function CommentPost(props) {
               onChange={(e) => setWrite(e.target.value)}
               value={write}
             ></textarea>
-
             <div className="button-Comment">
               <button className="btn-Comment" type="submit">
                 Comentar

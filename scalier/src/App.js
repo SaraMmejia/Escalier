@@ -7,6 +7,7 @@ import Collection from './components/Collection';
 import EditPost from './components/EditPost';
 import DeletePost from './components/DeletePost';
 import CommentPost from './components/CommentPost';
+import CommentListPost from './components/CommentListPost';
 import {
   BrowserRouter as Router,
   Route,
@@ -38,6 +39,11 @@ function App() {
           <Route exact path="/posts/edit/:id" component={EditPost}></Route>
           <Route exact path="/posts/destroy/:id" component={DeletePost}></Route>
           <Route exact path="/posts/show/:id" component={CommentPost}></Route>
+          <Route
+            exact
+            path="/comments/list/:id"
+            component={CommentListPost}
+          ></Route>
         </Switch>
       </Router>
     </div>
