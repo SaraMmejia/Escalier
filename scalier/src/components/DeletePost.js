@@ -13,14 +13,12 @@ function DeletePost(props) {
   const [file, setFile] = useState(null);
 
   async function handleSubmit(e) {
-    console.log('Title', title, 'description:', description);
     e.preventDefault();
     const data = new FormData();
     data.set('title', title);
     data.append('file', file);
     data.append('tags', tags);
     data.set('description', description);
-    console.log('Data es:', data);
 
     await axios({
       method: 'DELETE',
@@ -156,7 +154,7 @@ function DeletePost(props) {
           <div className="button-CreateD">
             <button className="publish-PostD" type="submit">
               {' '}
-              Eliminar Imagén{' '}
+              Eliminar Post{' '}
             </button>
           </div>
         </form>

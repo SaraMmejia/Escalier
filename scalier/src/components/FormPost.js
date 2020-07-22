@@ -137,7 +137,7 @@ function FormPost(props) {
           <div className="button-Create">
             <button className="publish-Post" type="submit">
               {' '}
-              Publicar Imagén{' '}
+              Publicar Post{' '}
             </button>
           </div>
         </form>

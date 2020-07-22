@@ -46,18 +46,27 @@
 
 .icones-Post {
   width: 70px;
+  padding: 2px;
   margin-right: 20px;
   display: flex;
+  justify-content: center;
+  align-items: center;
   justify-content: space-between;
 }
 
 .comment {
   display: flex;
+  justify-content: center;
+  align-items: center;
   cursor: pointer;
 }
 
 .comment-Icon {
   color: #9e9ea7;
+  margin-right: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .comment-Icon:hover {
@@ -71,12 +80,18 @@
 
 .like {
   display: flex;
+  justify-content: center;
+  align-items: center;
   cursor: pointer;
 }
 
 .like-likes {
   margin: 0px;
+  margin-left: 5px;
   color: #9e9ea7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .like-Icon {

@@ -26,6 +26,40 @@ function Collection() {
     });
   }, []);
 
+  async function vote(postId, vote) {
+    let url;
+    if (vote) {
+      url = '/likes/add';
+    } else {
+      url = 'likes/remove';
+    }
+
+    await axios({
+      method: 'POST',
+      baseURL: process.env.REACT_APP_SERVER_URL,
+      url,
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: localStorage.getItem('token'),
+      },
+      data: {
+        postId,
+      },
+    }).then((data) => {
+      let modifiedPosts = posts.map((item) => {
+        if (item._id === postId) {
+          let mod = { ...item };
+          mod.liked = vote ? true : false;
+          mod.likes = vote ? item.likes + 1 : item.likes - 1;
+          return mod;
+        } else {
+          return item;
+        }
+      });
+      setPosts(modifiedPosts);
+    });
+  }
+
   return (
     <div className="collection">
       <Navbar />
@@ -38,14 +72,17 @@ function Collection() {
         <div className="constainer">
           {posts.map((data) => {
             return (
-              <div className="list-Post">
+              <div className="list-Post" key={data.id}>
                 <div className="cards">
                   <div className="img-Ever">
-                    <img
-                      src={data.image}
-                      className="post-Image"
-                      alt="Imagen Publicada"
-                    />
+                    <Link to={`/posts/show/${data._id}`}>
+                      {' '}
+                      <img
+                        src={data.image}
+                        className="post-Image"
+                        alt="Imagen Publicada"
+                      />
+                    </Link>
                   </div>
                 </div>
                 <div className="collection-Icons">
@@ -58,11 +95,21 @@ function Collection() {
                         icon={faComment}
                         className="comment-IconC"
                       />
-                      <p className="comment-commentsC">12</p>
+                      <p className="comment-commentsC">{data.comments}</p>
                     </div>
                     <div className="likeC">
                       <FontAwesomeIcon icon={faHeart} className="like-IconC" />
-                      <p className="like-likesC">156</p>
+                      <p
+                        className={
+                          data.liked
+                            ? 'like-Icon--active'
+                            : 'like-Icon--inactive'
+                        }
+                        onClick={() =>
+                          vote(data._id, data.liked ? false : true)
+                        }
+                      />
+                      <p className="like-likes">{data.likes}</p>
                     </div>
                     <Link
                       to={`/posts/edit/${data._id}`}

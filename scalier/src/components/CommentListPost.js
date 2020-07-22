@@ -2,10 +2,6 @@ import React, { useState, useEffect } from 'react';
 import './ListPost.css';
 import axios from 'axios';
 import Navbar from './Navbar';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHeart } from '@fortawesome/free-solid-svg-icons';
-import { faDownload } from '@fortawesome/free-solid-svg-icons';
-import { Link } from 'react-router-dom';
 
 function CommentListPost({ props }) {
   const [comments, setComments] = useState([]);

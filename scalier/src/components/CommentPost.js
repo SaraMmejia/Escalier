@@ -3,7 +3,6 @@ import './CommentPost.css';
 import Navbar from './Navbar';
 import axios from 'axios';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHeart } from '@fortawesome/free-solid-svg-icons';
 import { faDownload } from '@fortawesome/free-solid-svg-icons';
 
 function CommentPost(props) {
@@ -34,6 +33,7 @@ function CommentPost(props) {
       },
     }).then(({ data }) => {
       getComments();
+      setWrite('');
     });
   }
 
@@ -64,7 +64,7 @@ function CommentPost(props) {
         Authorization: localStorage.getItem('token'),
       },
     }).then((data) => {
-      const { image, title, tags, description } = data.data;
+      const { image, title, description } = data.data;
       setDescription(description);
       setImage(image);
       setTitle(title);
@@ -85,10 +85,6 @@ function CommentPost(props) {
               <FontAwesomeIcon icon={faDownload} className="download-Icon" />
               <p className="save-P">Save</p>
             </div>
-            <div className="like-IconC">
-              <FontAwesomeIcon icon={faHeart} className="heart-IconC" />
-              <p className="like-P">Like</p>
-            </div>
           </div>
         </div>
         <div className="comment-image">
@@ -103,8 +99,9 @@ function CommentPost(props) {
           <div className="commet-Users">
             <div className="commet-Users">
               {comments.map((data) => (
-                <p key={data._id}>
-                  {data.ownerName}:{data.text}
+                <p key={data._id} className="conteiner-Comment ">
+                  <h4>{data.ownerName}: </h4>{' '}
+                  <p className="title-Title">{data.text}</p>
                 </p>
               ))}
             </div>

@@ -41,10 +41,14 @@
   color: #9e9ea7;
   cursor: pointer;
   display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
 }
 
 .comment-commentsC {
   margin: 0px;
+  margin-left: 5px;
 }
 
 .comment-IconC {
@@ -57,6 +61,9 @@
 
 .likeC {
   display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
   color: #9e9ea7;
   cursor: pointer;
 }
@@ -93,4 +100,25 @@
 
 .delete-IconC:hover {
   color: #c88b4a;
+}
+
+.button-Edit {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.button-Delete {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.title-Post {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2px;
 }

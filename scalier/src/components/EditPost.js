@@ -13,7 +13,6 @@ function EditPost(props) {
   const [file, setFile] = useState(null);
 
   async function handleSubmit(e) {
-    console.log('Title', title, 'description:', description);
     e.preventDefault();
     const data = new FormData();
     data.set('title', title);
@@ -69,6 +68,7 @@ function EditPost(props) {
       <Navbar />
       <div className="page-FormsE">
         <form className="post-FormE" onSubmit={handleSubmit}>
+          Editar Imagén{' '}
           <div className="principal-ImageE">
             {image ? null : (
               <FontAwesomeIcon
@@ -154,8 +154,7 @@ function EditPost(props) {
           <br />
           <div className="button-CreateE">
             <button className="publish-PostE" type="submit">
-              {' '}
-              Editar Imagén{' '}
+              Editar Post
             </button>
           </div>
         </form>

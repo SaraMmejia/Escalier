@@ -81,10 +81,12 @@ function ListPost({ props }) {
                 </div>
                 <div className="icones-Post">
                   <div className="comment">
-                    <FontAwesomeIcon
-                      icon={faComment}
-                      className="comment-Icon"
-                    />
+                    <Link to={`/posts/show/${data._id}`}>
+                      <FontAwesomeIcon
+                        icon={faComment}
+                        className="comment-Icon"
+                      />
+                    </Link>
                     <p className="comment-comments">{data.comments}</p>
                   </div>
                   <div className="like">
