@@ -70,7 +70,7 @@ function CommentPost(props) {
       setTitle(title);
       getComments();
     });
-  }, []);
+  });
 
   return (
     <div className="comment-Pot">
